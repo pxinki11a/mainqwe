@@ -1,0 +1,28 @@
+﻿<Page x:Class="qwe.AddEditCabinetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:qwe"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditCabinetPage" Background="#040C0E">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="172" Width="504">
+            <StackPanel Orientation="Horizontal" Width="459">
+                <TextBlock Text="Номер кабинета"/>
+                <TextBox x:Name="TBCabNum"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="423">
+                <TextBlock Text="Тип кабинета"/>
+                <TextBox x:Name="TBTypeCab"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="323">
+                <TextBlock Text="Корпус"/>
+                <TextBox x:Name="TBKorpus"/>
+            </StackPanel>
+            <Button Margin="10" Content="Сохранить" Click="BtnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

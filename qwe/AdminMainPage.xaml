@@ -1,0 +1,45 @@
+﻿<Page x:Class="qwe.AdminMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:qwe"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminMainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="85"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse Name="profilePicture"  Width="70" Height="70" StrokeThickness="1" 
+                 Stroke="{StaticResource ColorAccent}" HorizontalAlignment="Center" Margin="0,8,0,7">
+            <Ellipse.ContextMenu>
+                <ContextMenu>
+                    <!--<MenuItem Header="Профиль" Click="profileBtn_Click"/>
+                    <MenuItem Header="История входа" Click="historyBtn_Click"/>
+                    <MenuItem Header="Выход" Foreground="#FFC83232" Click="exitBtn_Click"/>-->
+                </ContextMenu>
+            </Ellipse.ContextMenu>
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/Images/person.png" Stretch="UniformToFill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <ComboBox Grid.Column="1">
+            <ComboBoxItem Content="Кабинеты"/>
+            <ComboBoxItem Content="История"/>
+        </ComboBox>
+        <Ellipse Name="iconPicture" Height="70" StrokeThickness="1" Grid.Column="2" Width="70" HorizontalAlignment="Center" Margin="0,8,0,7">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/Images/person.png" Stretch="UniformToFill"></ImageBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+    </Grid>
+</Page>

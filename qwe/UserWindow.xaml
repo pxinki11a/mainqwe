@@ -1,0 +1,59 @@
+﻿<Window x:Class="qwe.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:qwe"
+        mc:Ignorable="d"
+        Title="Пользователь" Height="450" Width="800" Background="AntiqueWhite" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="GoBackImage" Grid.Row="0" Width="36" Height="36" HorizontalAlignment="Left" Margin="48 0 0 0" Source="/Icon.ico" MouseLeftButtonUp="GoBackImage_Click"></Image>
+        <TextBlock FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Text="Книги по обмену"/>
+        <!--<Frame Grid.Row="1" NavigationUIVisibility="Hidden" Name="UserFrame"/>-->
+
+        <ListView Grid.Row="1" Name="CabinetList" Width="900">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Height="95">
+                        <Image Height="90" 
+                               Width="90"
+                               Source="/Images/person.png"
+                               Margin="0 0 20 0"/>
+                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding Authors.surname}"/>
+                                    <Label Foreground="{StaticResource ColorFont}" Content="|"/>
+                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding Authors.name}"/>
+                                    <Label Foreground="{StaticResource ColorFont}" Content="|"/>
+                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding Authors.patronymic}"/>
+                                </StackPanel>
+
+                                <Label FontSize="24" Content="{Binding name}"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2" Margin="20 0 20 0">
+                            <StackPanel Width="250">
+                                <TextBlock Text="{Binding description}" TextWrapping="Wrap" Name="TBDescription"/>
+
+                            </StackPanel>
+                        </Border>
+
+                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2" Margin="0,0,20,0">
+                            <StackPanel>
+                                <Label Content="{Binding Genres.name}"/>
+                                <!--<Label Content="{Binding State.name}"/>-->
+                                <Button Content="Подробнее" Click="BtnInfo_Click"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
