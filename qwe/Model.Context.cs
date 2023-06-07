@@ -13,10 +13,10 @@ namespace qwe
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class rezervEntities1 : DbContext
+    public partial class rezervEntities1488 : DbContext
     {
-        public rezervEntities1()
-            : base("name=rezervEntities1")
+        public rezervEntities1488()
+            : base("name=rezervEntities1488")
         {
         }
     
@@ -31,5 +31,6 @@ namespace qwe
         public virtual DbSet<status> status { get; set; }
         public virtual DbSet<typecabinet> typecabinet { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserCabinet> UserCabinet { get; set; }
     }
 }

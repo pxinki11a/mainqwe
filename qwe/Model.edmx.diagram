@@ -4,18 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2dac6a423fe6421cadc2cc341fb691f9" Name="Diagram1">
-        <EntityTypeShape EntityType="rezervModel.cabinet" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="rezervModel.korpus" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="rezervModel.Role" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="rezervModel.status" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="rezervModel.typecabinet" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="rezervModel.User" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+      <Diagram DiagramId="417003fcfbb74118a33686a61d76fa62" Name="Diagram1">
+        <EntityTypeShape EntityType="rezervModel.cabinet" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.korpus" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.Role" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.status" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.typecabinet" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.User" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel.UserCabinet" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="rezervModel.FK_cabinet_korpus" ManuallyRouted="false" />
         <AssociationConnector Association="rezervModel.FK_cabinet_status" ManuallyRouted="false" />
         <AssociationConnector Association="rezervModel.FK_cabinet_typecabinet" ManuallyRouted="false" />
-        <AssociationConnector Association="rezervModel.FK_cabinet_User" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel.FK_UserCabinet_cabinet" ManuallyRouted="false" />
         <AssociationConnector Association="rezervModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel.FK_UserCabinet_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

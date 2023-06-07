@@ -17,17 +17,21 @@ namespace qwe
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.cabinet = new HashSet<cabinet>();
+            this.UserCabinet = new HashSet<UserCabinet>();
         }
     
         public int id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> RoleId { get; set; }
-        public string fio { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string patronymic { get; set; }
+        public string email { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public string image { get; set; }
+        public Nullable<int> roleID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cabinet> cabinet { get; set; }
         public virtual Role Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserCabinet> UserCabinet { get; set; }
     }
 }

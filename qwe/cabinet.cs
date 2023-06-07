@@ -14,6 +14,12 @@ namespace qwe
     
     public partial class cabinet
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public cabinet()
+        {
+            this.UserCabinet = new HashSet<UserCabinet>();
+        }
+    
         public int id { get; set; }
         public string namecab { get; set; }
         public Nullable<int> id_korpus { get; set; }
@@ -27,6 +33,7 @@ namespace qwe
         public virtual korpus korpus { get; set; }
         public virtual status status { get; set; }
         public virtual typecabinet typecabinet { get; set; }
-        public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserCabinet> UserCabinet { get; set; }
     }
 }
