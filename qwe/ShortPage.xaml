@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LVShort">
+        <ListView Grid.Row="1" Name="LVShort" Background="#040C0E">
             <!--VerticalAlignment="Center" HorizontalAlignment="Center"-->
             <ListView.ItemTemplate>
                 <DataTemplate>

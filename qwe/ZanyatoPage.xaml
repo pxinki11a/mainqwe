@@ -6,12 +6,14 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ZanyatoPage">
+      Title="ZanyatoPage" Background="#040C0E">
 
-    <Grid>
-        <ListView Name="LWHistory" Margin="5" Width="800">
+    <Grid >
+        <ListView Name="LWHistory" Margin="5,0,-5,5" Width="800" Background="#040C0E" SelectionChanged="LWHistory_SelectionChanged">
             <ListView.View>
-                <GridView>
+
+                <GridView >
+
                     <GridView.Columns>
                         <GridViewColumn Width="250" Header="Кабинет" DisplayMemberBinding="{Binding cabinet.namecab}"></GridViewColumn>
                         <GridViewColumn Width="350" Header="Пользователь" DisplayMemberBinding="{Binding User.login}"></GridViewColumn>

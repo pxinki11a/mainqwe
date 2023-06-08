@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:qwe"
+        Icon="images\logo.png"
         mc:Ignorable="d"
-        Title="Админ" Height="450" Width="800" Background="#040C0E">
+        Title="Админ панель" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#040C0E" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>

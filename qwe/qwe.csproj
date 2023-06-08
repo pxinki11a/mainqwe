@@ -256,6 +256,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\person.png" />
     <Content Include="ModelRezerv.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelRezerv.edmx</DependentUpon>
@@ -266,7 +268,6 @@
       <DependentUpon>ModelRezerv.edmx</DependentUpon>
       <LastGenOutput>ModelRezerv.cs</LastGenOutput>
     </Content>
-    <Resource Include="images\person.png" />
     <Resource Include="images\icon.ico" />
   </ItemGroup>
   <ItemGroup>

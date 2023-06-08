@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,29 @@ namespace qwe
         {
             InitializeComponent();
         }
+
+        private void LWHistory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        class BackgroundConverter : IValueConverter
+        {
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                if (value != null && value is bool && (bool)value)
+                {
+                    return Application.Current.FindResource("ActiveBrush");
+                }
+
+                return Application.Current.FindResource("DefaultBrush");
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                throw new NotSupportedException();
+            }
+        }
+
     }
 }

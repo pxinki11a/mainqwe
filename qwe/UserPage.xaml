@@ -14,20 +14,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LVUsers">
+        <ListView Grid.Row="1" Name="LVUsers" Background="#040C0E">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="{StaticResource ColorAccent}">
                         <Grid HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding name}" TextAlignment="Left"/>
-                                <TextBlock Text="{Binding surname}"  TextAlignment="Left"/>
-                                <TextBlock Text="{Binding patronymic}" TextAlignment="Left" />
-                                <TextBlock Text="{Binding email}" TextAlignment="Left"/>
-                                <TextBlock Text="{Binding login}"  TextAlignment="Left"/>
-                                <TextBlock Text="{Binding password}" TextAlignment="Left" />
-                                <TextBlock Text="{Binding Role.name}"  TextAlignment="Left"/>
-                                <TextBlock Text="{Binding image}" TextAlignment="Left" />
+                                <TextBlock Width="150" Text="{Binding name}" TextAlignment="Left"/>
+                                <TextBlock Width="150" Text="{Binding surname}"  TextAlignment="Left"/>
+                                <TextBlock Width="150" Text="{Binding patronymic}" TextAlignment="Left" />
+                                <TextBlock Width="150" Text="{Binding email}" TextAlignment="Left"/>
+                                <TextBlock Width="150" Text="{Binding login}"  TextAlignment="Left"/>
+                                <TextBlock Width="150" Text="{Binding password}" TextAlignment="Left" />
+                                <TextBlock Width="150" Text="{Binding Role.name}"  TextAlignment="Left"/>
+                                <TextBlock Width="150" Text="{Binding image}" TextAlignment="Left" />
                                 <DockPanel Width="500" >
                                     <Button Width="150" Name="BtnEdit" HorizontalAlignment="Center" Click="BtnEdit_Click" Content="Редактировать"/>
                                     <Button Width="150" Name="BtnDelete" HorizontalAlignment="Center"  Click="BtnDelete_Click" Content="Удалить"/>

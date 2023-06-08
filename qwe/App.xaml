@@ -7,7 +7,7 @@
         <SolidColorBrush x:Key="ColorAccent" Color="#040C0E"/>
         <SolidColorBrush x:Key="ColorPrimary" Color="#132226"/>
         <SolidColorBrush x:Key="ColorNotWhite" Color="#fdf5e6"/>
-        <SolidColorBrush x:Key="ColorFont" Color="#BE9063"/>
+        <SolidColorBrush x:Key="ColorFont" Color="#505050"/>
         <SolidColorBrush x:Key="AnotherColor" Color="#132226"/>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="16"/>
@@ -133,5 +133,6 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
     </Application.Resources>
 </Application>

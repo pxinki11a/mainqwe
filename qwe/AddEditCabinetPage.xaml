@@ -5,29 +5,40 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
+      
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddEditCabinetPage" Background="#040C0E">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="248" Width="504">
-            <StackPanel Orientation="Horizontal" Width="459">
-                <TextBlock Text="Номер кабинета"/>
-                <TextBox x:Name="TBCabNum"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Height="280" Width="563">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="Номер кабинета"/>
+                        <TextBox x:Name="TBCabNum"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                        <TextBlock Text="Тип кабинета"/>
+                        <TextBox x:Name="TBTypeCab"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="Корпус"/>
+                        <TextBox x:Name="TBKorpus"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                        <TextBlock><Run Language="ru-ru" Text="Статус"/></TextBlock>
+                        <TextBox x:Name="TBStatus"/>
+                    </StackPanel>
+                    <Button Margin="10" Content="Сохранить" Click="BtnSave_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Border Margin="5" Width="225" Height="225" BorderBrush="{StaticResource ColorAccent}">
+                        <Image Name="ImagePFP" Source="/Images/person.png" Margin="-1,1,0,0"/>
+                    </Border>
+                    <Button Content="Добавить фото" Click="BtnImage_Click"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Width="423">
-                <TextBlock Text="Тип кабинета"/>
-                <TextBox x:Name="TBTypeCab"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Width="323">
-                <TextBlock Text="Корпус"/>
-                <TextBox x:Name="TBKorpus"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Width="310">
-                <TextBlock><Run Language="ru-ru" Text="Статус"/></TextBlock>
-                <TextBox x:Name="TBStatus"/>
-            </StackPanel>
-            <Button Content="Сохранить" Click="BtnSave_Click" RenderTransformOrigin="0.505,0.626"/>
-            
         </StackPanel>
     </Grid>
 </Page>
