@@ -101,5 +101,10 @@ namespace qwe
         {
 
         }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

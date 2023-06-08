@@ -21,7 +21,7 @@ namespace qwe
         }
     
         public int id { get; set; }
-        public string korpusname { get; set; }
+        public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cabinet> cabinet { get; set; }

@@ -48,7 +48,7 @@
 
                         <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2" Margin="0,0,20,0">
                             <StackPanel>
-                                <Label Content="{Binding korpus.korpusname}"/>
+                                <Label Content="{Binding korpus.name}"/>
                                 <!--<Label Content="{Binding State.name}"/>-->
                                 <!--<Button Content="Подробнее" Click="BtnInfo_Click"/>-->
                             </StackPanel>

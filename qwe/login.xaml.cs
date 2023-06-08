@@ -26,48 +26,52 @@ namespace qwe
             InitializeComponent();
         }
 
-        private void BtnSignIn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            { 
-                var currentUser = AppData.db.User.FirstOrDefault((u) => u.login == TBLogin.Text && u.password == TBPassword.Text);
 
-                if (currentUser == null)
+            private void BtnSignIn_Click(object sender, RoutedEventArgs e)
+            {
+                try
                 {
-                    MessageBox.Show("Такого пользователя не существует", "Ошибка авторизации");
-                }
-                else
-                {
-                    if (currentUser.login.Equals(TBLogin.Text) && currentUser.password.Equals(TBPassword.Text))
+                    var currentUser = AppData.db.User.FirstOrDefault((User) => User.login == TBLogin.Text && User.password == TBPassword.Text);
+
+                    if (currentUser == null)
                     {
-                        if (currentUser.roleID == 1)
-                        {
-                            AdminWindow admin = new AdminWindow(); //currentUser.userID
-                            admin.Show();
-                        }
-                        else
-                        {
-                            UserWindow userWindow = new UserWindow();
-                            userWindow.Show();
-                        }
-                        Window.GetWindow(this).Close();
+                        MessageBox.Show("Такого пользователя нет!", "Ошибка авторизации");
                     }
                     else
                     {
-                        MessageBox.Show("Введите корректные логин и пароль", "Ошибка авторизации");
+                        if (currentUser.login.Equals(TBLogin.Text) && currentUser.password.Equals(TBPassword.Text))
+                        {
+                            if (currentUser.roleID == 1)
+                            {
+                                AdminWindow admin = new AdminWindow(); //currentUser.userID
+                                admin.Show();
+                            }
+                            else
+                            {
+                                UserWindow userWindow = new UserWindow();
+                                userWindow.Show();
+                            }
+                            Window.GetWindow(this).Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Введите корректные логин и пароль", "Ошибка авторизации");
+                        }
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка " + ex.Message.ToString());
-            }
-        }
 
-        private void BtnSignUp_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new reg());
-        }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка " + ex.Message.ToString());
+                }
+
+            }
+
+            private void BtnSignUp_Click(object sender, RoutedEventArgs e)
+            {
+                NavigationService.Navigate(new reg());
+            }
 
         private void TBLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
