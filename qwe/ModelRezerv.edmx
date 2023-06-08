@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище rezervModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="namecab" Type="nchar" MaxLength="30" />
+          <Property Name="id_korpus" Type="int" />
+          <Property Name="id_user" Type="int" />
+          <Property Name="id_status" Type="int" />
+          <Property Name="id_typecab" Type="int" />
+          <Property Name="datarezerva" Type="date" />
+          <Property Name="konecrezerva" Type="date" />
+          <Property Name="photo" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="korpus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="typecabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="surname" Type="nvarchar(max)" />
+          <Property Name="patronymic" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="login" Type="nvarchar(max)" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="image" Type="nvarchar(max)" />
+          <Property Name="roleID" Type="int" />
+        </EntityType>
+        <EntityType Name="UserCabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cabinetID" Type="int" />
+          <Property Name="userID" Type="int" />
+          <Property Name="time" Type="date" />
+        </EntityType>
+        <Association Name="FK_cabinet_korpus">
+          <End Role="korpus" Type="Self.korpus" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korpus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_korpus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cabinet_status">
+          <End Role="status" Type="Self.status" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cabinet_typecabinet">
+          <End Role="typecabinet" Type="Self.typecabinet" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typecabinet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_typecab" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCabinet_cabinet">
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="0..1" />
+          <End Role="UserCabinet" Type="Self.UserCabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cabinet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserCabinet">
+              <PropertyRef Name="cabinetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCabinet_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserCabinet" Type="Self.UserCabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserCabinet">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище rezervModel1Container">
+          <EntitySet Name="cabinet" EntityType="Self.cabinet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="korpus" EntityType="Self.korpus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status" EntityType="Self.status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="typecabinet" EntityType="Self.typecabinet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCabinet" EntityType="Self.UserCabinet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_cabinet_korpus" Association="Self.FK_cabinet_korpus">
+            <End Role="korpus" EntitySet="korpus" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cabinet_status" Association="Self.FK_cabinet_status">
+            <End Role="status" EntitySet="status" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cabinet_typecabinet" Association="Self.FK_cabinet_typecabinet">
+            <End Role="typecabinet" EntitySet="typecabinet" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCabinet_cabinet" Association="Self.FK_UserCabinet_cabinet">
+            <End Role="cabinet" EntitySet="cabinet" />
+            <End Role="UserCabinet" EntitySet="UserCabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCabinet_User" Association="Self.FK_UserCabinet_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserCabinet" EntitySet="UserCabinet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rezervModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="namecab" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="id_korpus" Type="Int32" />
+          <Property Name="id_user" Type="Int32" />
+          <Property Name="id_status" Type="Int32" />
+          <Property Name="id_typecab" Type="Int32" />
+          <Property Name="datarezerva" Type="DateTime" Precision="0" />
+          <Property Name="konecrezerva" Type="DateTime" Precision="0" />
+          <Property Name="photo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="korpus" Relationship="Self.FK_cabinet_korpus" FromRole="cabinet" ToRole="korpus" />
+          <NavigationProperty Name="status" Relationship="Self.FK_cabinet_status" FromRole="cabinet" ToRole="status" />
+          <NavigationProperty Name="typecabinet" Relationship="Self.FK_cabinet_typecabinet" FromRole="cabinet" ToRole="typecabinet" />
+          <NavigationProperty Name="UserCabinet" Relationship="Self.FK_UserCabinet_cabinet" FromRole="cabinet" ToRole="UserCabinet" />
+        </EntityType>
+        <EntityType Name="korpus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_korpus" FromRole="korpus" ToRole="cabinet" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_status" FromRole="status" ToRole="cabinet" />
+        </EntityType>
+        <EntityType Name="typecabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_typecabinet" FromRole="typecabinet" ToRole="cabinet" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="roleID" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="UserCabinet" Relationship="Self.FK_UserCabinet_User" FromRole="User" ToRole="UserCabinet" />
+        </EntityType>
+        <EntityType Name="UserCabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cabinetID" Type="Int32" />
+          <Property Name="userID" Type="Int32" />
+          <Property Name="time" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="cabinet" Relationship="Self.FK_UserCabinet_cabinet" FromRole="UserCabinet" ToRole="cabinet" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserCabinet_User" FromRole="UserCabinet" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_cabinet_korpus">
+          <End Role="korpus" Type="Self.korpus" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korpus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_korpus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cabinet_status">
+          <End Role="status" Type="Self.status" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cabinet_typecabinet">
+          <End Role="typecabinet" Type="Self.typecabinet" Multiplicity="0..1" />
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typecabinet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cabinet">
+              <PropertyRef Name="id_typecab" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCabinet_cabinet">
+          <End Role="cabinet" Type="Self.cabinet" Multiplicity="0..1" />
+          <End Role="UserCabinet" Type="Self.UserCabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cabinet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserCabinet">
+              <PropertyRef Name="cabinetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCabinet_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserCabinet" Type="Self.UserCabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserCabinet">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="rezervEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cabinet" EntityType="Self.cabinet" />
+          <EntitySet Name="korpus" EntityType="Self.korpus" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="status" EntityType="Self.status" />
+          <EntitySet Name="typecabinet" EntityType="Self.typecabinet" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserCabinet" EntityType="Self.UserCabinet" />
+          <AssociationSet Name="FK_cabinet_korpus" Association="Self.FK_cabinet_korpus">
+            <End Role="korpus" EntitySet="korpus" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cabinet_status" Association="Self.FK_cabinet_status">
+            <End Role="status" EntitySet="status" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cabinet_typecabinet" Association="Self.FK_cabinet_typecabinet">
+            <End Role="typecabinet" EntitySet="typecabinet" />
+            <End Role="cabinet" EntitySet="cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCabinet_cabinet" Association="Self.FK_UserCabinet_cabinet">
+            <End Role="cabinet" EntitySet="cabinet" />
+            <End Role="UserCabinet" EntitySet="UserCabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCabinet_User" Association="Self.FK_UserCabinet_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserCabinet" EntitySet="UserCabinet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище rezervModel1Container" CdmEntityContainer="rezervEntities2">
+          <EntitySetMapping Name="cabinet">
+            <EntityTypeMapping TypeName="rezervModel1.cabinet">
+              <MappingFragment StoreEntitySet="cabinet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="namecab" ColumnName="namecab" />
+                <ScalarProperty Name="id_korpus" ColumnName="id_korpus" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="id_typecab" ColumnName="id_typecab" />
+                <ScalarProperty Name="datarezerva" ColumnName="datarezerva" />
+                <ScalarProperty Name="konecrezerva" ColumnName="konecrezerva" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korpus">
+            <EntityTypeMapping TypeName="rezervModel1.korpus">
+              <MappingFragment StoreEntitySet="korpus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="rezervModel1.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status">
+            <EntityTypeMapping TypeName="rezervModel1.status">
+              <MappingFragment StoreEntitySet="status">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="typecabinet">
+            <EntityTypeMapping TypeName="rezervModel1.typecabinet">
+              <MappingFragment StoreEntitySet="typecabinet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="rezervModel1.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCabinet">
+            <EntityTypeMapping TypeName="rezervModel1.UserCabinet">
+              <MappingFragment StoreEntitySet="UserCabinet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cabinetID" ColumnName="cabinetID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
