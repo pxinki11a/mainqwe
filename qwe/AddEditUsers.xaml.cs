@@ -49,8 +49,29 @@ namespace qwe
             TBUserLogin.Text = currentUser.login;
             TBUserPass.Password = currentUser.password;
             TBUserRole.Text = currentUser.roleID.ToString();
-
+            if (currentUser.image != null)
+            {
+                _mainImageData = File.ReadAllBytes(path + currentUser.image);
+                Imageqwe.Source = new ImageSourceConverter().ConvertFrom(_mainImageData) as ImageSource;
+            }
         }
+
+            private void BtnSelectImage_Click(object sender, RoutedEventArgs e)
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Multiselect = false;
+                ofd.Filter = "Фото | *.png; *.jpg; *.jpeg";
+                if (ofd.ShowDialog() == true)
+                {
+                    img = Path.GetFileName(ofd.FileName);
+                    extension = Path.GetExtension(img);
+                    selectefFileName = ofd.FileName;
+                    _mainImageData = File.ReadAllBytes(ofd.FileName);
+                    Imageqwe.Source = new ImageSourceConverter()
+                        .ConvertFrom(_mainImageData) as ImageSource;
+                }
+
+            }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             if (currentUser == null)
@@ -64,12 +85,13 @@ namespace qwe
                     login = TBUserLogin.Text,
                     password = TBUserPass.Password,
                     roleID = Int32.Parse(TBUserRole.Text),
+                    image = img
                 };
                 AppData.db.User.Add(user);
                 AppData.db.SaveChanges();
                 MessageBox.Show("Пользователь успешно добавлен!");
             }
-            else if (currentUser.name != TBUserName.Text || currentUser.surname != TBUserSurname.Text || currentUser.patronymic != TBUserPatronymic.Text | currentUser.email != TBUseremail.Text | currentUser.login != TBUserLogin.Text | currentUser.password != TBUserPass.Password | currentUser.roleID != TBUserRole.TabIndex)
+            else if (currentUser.image != img || currentUser.name != TBUserName.Text || currentUser.surname != TBUserSurname.Text || currentUser.patronymic != TBUserPatronymic.Text | currentUser.email != TBUseremail.Text | currentUser.login != TBUserLogin.Text | currentUser.password != TBUserPass.Password | currentUser.roleID != TBUserRole.TabIndex)
             {
                 currentUser.name = TBUserName.Text;
                 currentUser.surname = TBUserSurname.Text;
@@ -78,6 +100,7 @@ namespace qwe
                 currentUser.login = TBUserLogin.Text;
                 currentUser.password = TBUserPass.Password;
                 currentUser.roleID = Int32.Parse(TBUserRole.Text);
+                currentUser.image = img;
                 AppData.db.SaveChanges();
                 MessageBox.Show("Пользователь успешно обновлен!");
                 currentUser = null;
@@ -139,21 +162,8 @@ namespace qwe
                 TBLoginError.Visibility = Visibility.Collapsed;
             }
         }
-        private void BtnSelectImage_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = false;
-            ofd.Filter = "Фото | *.png; *.jpg; *.jpeg";
-            if (ofd.ShowDialog() == true)
-            {
-                img = Path.GetFileName(ofd.FileName);
-                extension = Path.GetExtension(img);
-                selectefFileName = ofd.FileName;
-                _mainImageData = File.ReadAllBytes(ofd.FileName);
-                ImagePFP.Source = new ImageSourceConverter()
-                    .ConvertFrom(_mainImageData) as ImageSource;
-            }
+        
         }
 
     }
-}
+

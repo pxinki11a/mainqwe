@@ -87,7 +87,7 @@
 
                 <StackPanel Grid.Column="2" Grid.RowSpan="9" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Border Margin="5" Width="240" Height="240" BorderBrush="{StaticResource ColorAccent}">
-                        <Image Name="ImagePFP" Source="/Images/person.png"/>
+                        <Image Name="Imageqwe" Source="/Images/person.png"/>
                     </Border>
                     <Button Name="BtnSelectImage" Content="Добавить фото" Click="BtnSelectImage_Click"/>
                 </StackPanel>

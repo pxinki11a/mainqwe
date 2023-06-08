@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image x:Name="GoBackImage" Grid.Row="0" Width="83" Height="25" HorizontalAlignment="Left" Margin="40,5,0,5" Source="/Icon.ico" MouseLeftButtonUp="GoBackImage_Click" ></Image>
-        <TextBlock Grid.Row="0" Text="Окно администратора"/>
+        <TextBlock Grid.Row="0" Text="Редактирование"/>
         <ComboBox Name="SelectTable" Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Кабинеты"/>
             <ComboBoxItem Content="Корпуса"/>
