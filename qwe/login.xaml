@@ -14,7 +14,7 @@
                     HorizontalAlignment="Center">
 
             <TextBlock Text="Логин" />
-            <TextBox Name="TBLogin"/>
+            <TextBox Name="TBLogin" TextChanged="TBLogin_TextChanged"/>
             <TextBlock Text="Пароль"/>
             <TextBox Name="TBPassword"/>
             <StackPanel Orientation="Horizontal">

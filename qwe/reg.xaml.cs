@@ -1,4 +1,5 @@
-﻿using System;
+﻿using qwe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace qwe
     {
         private byte[] _mainImageData = null;
         public string img = null;
-        public string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Images\");
+        public string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Images/");
         public string selectefFileName;
         public string extension = "";
 
@@ -87,13 +88,13 @@ namespace qwe
                 MatchCollection strongMatch = strongPass.Matches(password);
                 if (strongMatch.Count > 0)
                 {
-                    TBPassStrength.Text = "Ничо такой пароль, хороший";
+                    TBPassStrength.Text = "Средний пароль";
                     TBPassStrength.Foreground = Brushes.DarkRed;
                     TBPassStrength.Visibility = Visibility.Visible;
                 }
                 else
                 {
-                    TBPassStrength.Text = "хз, слабый пароль какой-то";
+                    TBPassStrength.Text = "Слабый пароль";
                     TBPassStrength.Foreground = Brushes.Green;
                     TBPassStrength.Visibility = Visibility.Visible;
                 }

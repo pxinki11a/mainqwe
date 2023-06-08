@@ -1,4 +1,5 @@
-﻿using System;
+﻿using qwe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace qwe
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
+            { 
                 var currentUser = AppData.db.User.FirstOrDefault((u) => u.login == TBLogin.Text && u.password == TBPassword.Text);
 
                 if (currentUser == null)
@@ -66,6 +67,11 @@ namespace qwe
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new reg());
+        }
+
+        private void TBLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

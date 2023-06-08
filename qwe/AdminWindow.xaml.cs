@@ -27,26 +27,27 @@ namespace qwe
             InitializeComponent();
             SelectTable.SelectedIndex = 0;
         }
-
+        
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             currentTable = (TableName)SelectTable.SelectedIndex;
             switch (currentTable)
             {
                 case TableName.cabinet:
-                    MainFrame.Navigate(new ShortPage(TableName.cabinet));
-                    break;
-                case TableName.Role:
-                    MainFrame.Navigate(new ShortPage(TableName.Role));
+                    MainFrame.Navigate(new AddEditCabinetPage());
                     break;
                 case TableName.korpus:
                     MainFrame.Navigate(new ShortPage(TableName.korpus));
                     break;
-                case TableName.typecabinet:
-                    MainFrame.Navigate(new ShortPage(TableName.typecabinet));
+                
+                case TableName.Role:
+                    MainFrame.Navigate(new ShortPage(TableName.Role));
                     break;
                 case TableName.status:
-                    MainFrame.Navigate(new status());
+                    MainFrame.Navigate(new ShortPage(TableName.status));
+                    break;
+                case TableName.typecabinet:
+                    MainFrame.Navigate(new ShortPage(TableName.typecabinet));
                     break;
                 case TableName.User:
                     break;
@@ -65,18 +66,19 @@ namespace qwe
             case TableName.cabinet:
                 MainFrame.Navigate(new ShortPage(TableName.cabinet));
                 break;
-            case TableName.Role:
+                case TableName.korpus:
+                    MainFrame.Navigate(new ShortPage(TableName.korpus));
+                    break;
+                case TableName.Role:
                 MainFrame.Navigate(new ShortPage(TableName.Role));
                 break;
-            case TableName.korpus:
-                MainFrame.Navigate(new ShortPage(TableName.korpus));
-                break;
-            case TableName.typecabinet:
+                case TableName.status:
+                    MainFrame.Navigate(new status());
+                    break;
+                case TableName.typecabinet:
                 MainFrame.Navigate(new ShortPage(TableName.typecabinet));
                 break;
-            case TableName.status:
-                MainFrame.Navigate(new status());
-                break;
+            
             case TableName.User:
                 break;
             case TableName.UserCabinet:

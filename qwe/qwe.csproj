@@ -82,6 +82,12 @@
     <Compile Include="AddEditCabinetPage.xaml.cs">
       <DependentUpon>AddEditCabinetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddEditShortPage.xaml.cs">
+      <DependentUpon>AddEditShortPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditUsers.xaml.cs">
+      <DependentUpon>AddEditUsers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ShortPage.xaml.cs">
+      <DependentUpon>ShortPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="status.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -132,6 +141,14 @@
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddEditCabinetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditShortPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +185,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="reg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShortPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\person.png" />
+    <Resource Include="images\icon.ico" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
