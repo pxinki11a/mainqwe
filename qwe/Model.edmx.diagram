@@ -18,7 +18,6 @@
         <AssociationConnector Association="rezervModel.FK_UserCabinet_cabinet" ManuallyRouted="false" />
         <AssociationConnector Association="rezervModel.FK_User_Role" ManuallyRouted="false" />
         <AssociationConnector Association="rezervModel.FK_UserCabinet_User" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="rezervModel.sysdiagrams" Width="1.5" PointX="3.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

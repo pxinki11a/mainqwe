@@ -9,7 +9,7 @@
       Title="AddEditCabinetPage" Background="#040C0E">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="172" Width="504">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="248" Width="504">
             <StackPanel Orientation="Horizontal" Width="459">
                 <TextBlock Text="Номер кабинета"/>
                 <TextBox x:Name="TBCabNum"/>
@@ -22,7 +22,12 @@
                 <TextBlock Text="Корпус"/>
                 <TextBox x:Name="TBKorpus"/>
             </StackPanel>
-            <Button Margin="10" Content="Сохранить" Click="BtnSave_Click"/>
+            <StackPanel Orientation="Horizontal" Width="310">
+                <TextBlock><Run Language="ru-ru" Text="Статус"/></TextBlock>
+                <TextBox x:Name="TBStatus"/>
+            </StackPanel>
+            <Button Content="Сохранить" Click="BtnSave_Click" RenderTransformOrigin="0.505,0.626"/>
+            
         </StackPanel>
     </Grid>
 </Page>

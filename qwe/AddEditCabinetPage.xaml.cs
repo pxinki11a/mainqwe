@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,7 +37,8 @@ namespace qwe
 
             TBCabNum.Text = currentCabinet.namecab;
             TBTypeCab.Text = Convert.ToString(currentCabinet.id_typecab);
-            TBKorpus.Text = Convert.ToString(currentCabinet.id_korpus); ;
+            TBKorpus.Text = Convert.ToString(currentCabinet.id_korpus);
+            TBStatus.Text = Convert.ToString(currentCabinet.id_status);
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -48,18 +50,21 @@ namespace qwe
                     namecab = TBCabNum.Text,
                     id_typecab = Int32.Parse(TBTypeCab.Text),
                     id_korpus = Int32.Parse(TBKorpus.Text),
+                    id_status = Int32.Parse(TBStatus.Text),
                 };
                 AppData.db.cabinet.Add(cabinet);
                 AppData.db.SaveChanges();
-                MessageBox.Show("Автор успешно добавлен!");
+                MessageBox.Show("Кабинет успешно добавлен!");
             }
-            else if (currentCabinet.namecab != TBCabNum.Text || currentCabinet.id_typecab != Int32.Parse(TBTypeCab.Text) || currentCabinet.id_korpus != Int32.Parse(TBKorpus.Text))
+            else if (currentCabinet.namecab != TBCabNum.Text || currentCabinet.id_typecab != Int32.Parse(TBTypeCab.Text) || currentCabinet.id_korpus != Int32.Parse(TBKorpus.Text) || currentCabinet.id_status != Int32.Parse(TBStatus.Text))
             {
                 currentCabinet.namecab = TBCabNum.Text;
                 currentCabinet.id_typecab = Int32.Parse(TBTypeCab.Text);
                 currentCabinet.id_korpus = Int32.Parse(TBKorpus.Text);
+                currentCabinet.id_status = Int32.Parse(TBStatus.Text);
+
                 AppData.db.SaveChanges();
-                MessageBox.Show("Автор успешно обновлен!");
+                MessageBox.Show("Кабинет успешно обновлен!");
                 currentCabinet = null;
             }
         }

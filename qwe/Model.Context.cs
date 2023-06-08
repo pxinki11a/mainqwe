@@ -13,10 +13,10 @@ namespace qwe
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class rezervEntities1489 : DbContext
+    public partial class rezervEntities1488 : DbContext
     {
-        public rezervEntities1489()
-            : base("name=rezervEntities1489")
+        public rezervEntities1488()
+            : base("name=rezervEntities1488")
         {
         }
     
