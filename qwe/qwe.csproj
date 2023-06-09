@@ -79,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCab.xaml.cs">
+      <DependentUpon>AddCab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddEditCabinetPage.xaml.cs">
       <DependentUpon>AddEditCabinetPage.xaml</DependentUpon>
     </Compile>
@@ -100,46 +103,69 @@
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="cabinet.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="CabinetsPage.xaml.cs">
       <DependentUpon>CabinetsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="korpus.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs">
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRezerv.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRezerv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRezerv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelRezerv.edmx</DependentUpon>
     </Compile>
     <Compile Include="reg.xaml.cs">
       <DependentUpon>reg.xaml</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="ShortPage.xaml.cs">
       <DependentUpon>ShortPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="status.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="typecabinet.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
     </Compile>
     <Compile Include="UserCabinet.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelRezerv.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZanyatoPage.xaml.cs">
+      <DependentUpon>ZanyatoPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddCab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddEditCabinetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +198,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -192,22 +222,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZanyatoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -225,12 +253,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="ModelRezerv.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelRezerv.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="ModelRezerv.edmx.diagram">
+      <DependentUpon>ModelRezerv.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -242,17 +270,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\logo.png" />
     <Resource Include="images\person.png" />
+    <Content Include="ModelRezerv.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelRezerv.edmx</DependentUpon>
+      <LastGenOutput>ModelRezerv.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelRezerv.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelRezerv.edmx</DependentUpon>
+      <LastGenOutput>ModelRezerv.cs</LastGenOutput>
+    </Content>
     <Resource Include="images\icon.ico" />
-    <Content Include="Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

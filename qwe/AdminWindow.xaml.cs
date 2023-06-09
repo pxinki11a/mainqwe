@@ -34,7 +34,7 @@ namespace qwe
             switch (currentTable)
             {
                 case TableName.cabinet:
-                    MainFrame.Navigate(new AddEditCabinetPage());
+                    MainFrame.Navigate(new CabinetsPage());
                     break;
                 case TableName.korpus:
                     MainFrame.Navigate(new ShortPage(TableName.korpus));
@@ -50,8 +50,10 @@ namespace qwe
                     MainFrame.Navigate(new ShortPage(TableName.typecabinet));
                     break;
                 case TableName.User:
+                    MainFrame.Navigate(new UserPage());
                     break;
                 case TableName.UserCabinet:
+                    MainFrame.Navigate(new ZanyatoPage());
                     break;
                 default:
                     break;
@@ -64,24 +66,26 @@ namespace qwe
             {
                 
             case TableName.cabinet:
-                MainFrame.Navigate(new ShortPage(TableName.cabinet));
+                MainFrame.Navigate(new AddEditCabinetPage());
                 break;
                 case TableName.korpus:
-                    MainFrame.Navigate(new ShortPage(TableName.korpus));
+                    MainFrame.Navigate(new AddEditShortPage(TableName.korpus));
                     break;
                 case TableName.Role:
-                MainFrame.Navigate(new ShortPage(TableName.Role));
+                MainFrame.Navigate(new AddEditShortPage(TableName.Role));
                 break;
                 case TableName.status:
-                    MainFrame.Navigate(new status());
+                    MainFrame.Navigate(new AddEditShortPage(TableName.status));
                     break;
                 case TableName.typecabinet:
-                MainFrame.Navigate(new ShortPage(TableName.typecabinet));
+                MainFrame.Navigate(new AddEditShortPage(TableName.typecabinet));
                 break;
             
             case TableName.User:
+                    MainFrame.Navigate(new AddEditUsers());
                 break;
             case TableName.UserCabinet:
+                    MainFrame.Navigate(new ZanyatoPage());
                 break;
             default:
                 break;
@@ -95,6 +99,11 @@ namespace qwe
                 //"Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes
                 )
                 MainFrame.GoBack();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
         }
 
         private void GoBackImage_Click(object sender, MouseButtonEventArgs e)

@@ -5,57 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:qwe"
         mc:Ignorable="d"
-        Title="Пользователь" Height="450" Width="800" Background="#040C0E" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+        Icon="images\logo.png"
+        Title="Окно пользователя" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#040C0E" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <!--<Image x:Name="GoBackImage" Grid.Row="0" Width="36" Height="36" HorizontalAlignment="Left" Margin="48 0 0 0" Source="images\icon.ico" MouseLeftButtonUp="GoBackImage_MouseLeftButtonUp"></Image>-->
         <TextBlock FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Text="Резервация кабинетов"/>
-        <!--<Frame Grid.Row="1" NavigationUIVisibility="Hidden" Name="UserFrame"/>-->
-
-        <ListView Grid.Row="1" Name="CabinetList">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Height="95">
-                        <Image Height="90" 
-                               Width="90"
-                               Source="/Images/person.png"
-                               Margin="0 0 20 0"/>
-                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2">
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal" >
-                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding cabinet.id}"/>
-                                    <Label Foreground="{StaticResource ColorFont}" Content="|"/>
-                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding cabinet.namecab}"/>
-                                    <Label Foreground="{StaticResource ColorFont}" Content="|"/>
-                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding cabinet.id_korpus}"/>
-                                    <!--<Label Foreground="{StaticResource ColorFont}" Content="|"/>
-                                    <Label Foreground="{StaticResource ColorFont}" Content="{Binding cabinet.id_status}"/>-->
-                                </StackPanel>
-
-                                <Label FontSize="24" Content="{Binding id.cabinet}"/>
-                            </StackPanel>
-                        </Border>
-                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2" Margin="20 0 20 0">
-                            <StackPanel Width="250">
-                                <TextBlock Text="{Binding namecab}" TextWrapping="Wrap" Name="TBnamecab"/>
-
-                            </StackPanel>
-                        </Border>
-
-                        <Border BorderBrush="{StaticResource AnotherColor}" BorderThickness="2" Margin="0,0,20,0">
-                            <StackPanel>
-                                <Label Content="{Binding korpus.name}"/>
-                                <!--<Label Content="{Binding State.name}"/>-->
-                                <!--<Button Content="Подробнее" Click="BtnInfo_Click"/>-->
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Name="UserFrame" />
+        <Button Grid.Row="0" HorizontalAlignment="Left" Margin="56,15,0,25" Content="Назад" x:Name="BtnBack" Click="BtnBack_Click" />
     </Grid>
 </Window>

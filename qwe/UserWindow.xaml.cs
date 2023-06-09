@@ -25,21 +25,21 @@ namespace qwe
         {
             InitializeComponent();
 
-            try
-            {
-                CabinetList.ItemsSource = AppData.db.cabinet.Take(4).ToList();
-                var curentCabinet = CabinetList.SelectedItem as cabinet;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Что-то пошло не так!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-
+            AppFrame.frameUser = UserFrame;
+            UserFrame.Navigate(new Main());
         }
 
         private void GoBackImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            UserFrame.GoBack();
+        }
+
+        private void CabinetList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

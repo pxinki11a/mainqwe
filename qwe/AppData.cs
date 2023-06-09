@@ -19,6 +19,6 @@ namespace qwe
 
     internal class AppData
     {
-        public static rezervEntities1489 db = new rezervEntities1489();
+        public static rezervEntities2 db = new rezervEntities2();
     }
 }

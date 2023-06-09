@@ -14,14 +14,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LVShort">
+        <ListView Grid.Row="1" Name="LVShort" Background="#040C0E">
             <!--VerticalAlignment="Center" HorizontalAlignment="Center"-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="{StaticResource ColorAccent}">
                         <Grid HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding name}" TextAlignment="Center"/>
+                                <TextBlock Width="500" Text="{Binding name}" TextAlignment="Left"/>
                                 <Button Width="150" Name="BtnEdit" HorizontalAlignment="Right" Click="BtnEdit_Click" Content="Редактировать"/>
                                 <Button Width="150" Name="BtnDelete" HorizontalAlignment="Right"  Click="BtnDelete_Click" Content="Удалить"/>
                             </StackPanel>

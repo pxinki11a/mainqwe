@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище rezervModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище rezervModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cabinet">
           <Key>
             <PropertyRef Name="id" />
@@ -24,41 +24,41 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="korpusname" Type="nchar" MaxLength="30" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="30" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="status">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="status" Type="nchar" MaxLength="20" />
+          <Property Name="name" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="typecabinet">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="typecab" Type="nchar" MaxLength="30" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="30" />
-          <Property Name="surname" Type="nchar" MaxLength="30" />
-          <Property Name="patronymic" Type="nchar" MaxLength="30" />
-          <Property Name="email" Type="nchar" MaxLength="60" />
-          <Property Name="login" Type="nchar" MaxLength="30" />
-          <Property Name="password" Type="nchar" MaxLength="30" />
-          <Property Name="image" Type="nchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="surname" Type="nvarchar(max)" />
+          <Property Name="patronymic" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="login" Type="nvarchar(max)" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="image" Type="nvarchar(max)" />
           <Property Name="roleID" Type="int" />
         </EntityType>
         <EntityType Name="UserCabinet">
@@ -142,7 +142,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище rezervModelContainer">
+        <EntityContainer Name="Хранилище rezervModel1Container">
           <EntitySet Name="cabinet" EntityType="Self.cabinet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="korpus" EntityType="Self.korpus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -179,7 +179,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="rezervModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="rezervModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="cabinet">
           <Key>
             <PropertyRef Name="id" />
@@ -203,7 +203,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="korpusname" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_korpus" FromRole="korpus" ToRole="cabinet" />
         </EntityType>
         <EntityType Name="Role">
@@ -211,7 +211,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="status">
@@ -219,7 +219,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="status1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_status" FromRole="status" ToRole="cabinet" />
         </EntityType>
         <EntityType Name="typecabinet">
@@ -227,7 +227,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="typecab" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="cabinet" Relationship="Self.FK_cabinet_typecabinet" FromRole="typecabinet" ToRole="cabinet" />
         </EntityType>
         <EntityType Name="User">
@@ -235,13 +235,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="surname" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="patronymic" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
-          <Property Name="login" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="image" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="roleID" Type="Int32" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="UserCabinet" Relationship="Self.FK_UserCabinet_User" FromRole="User" ToRole="UserCabinet" />
@@ -329,7 +329,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="rezervEntities1488" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="rezervEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="cabinet" EntityType="Self.cabinet" />
           <EntitySet Name="korpus" EntityType="Self.korpus" />
           <EntitySet Name="Role" EntityType="Self.Role" />
@@ -367,9 +367,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище rezervModelContainer" CdmEntityContainer="rezervEntities1488">
+        <EntityContainerMapping StorageEntityContainer="Хранилище rezervModel1Container" CdmEntityContainer="rezervEntities2">
           <EntitySetMapping Name="cabinet">
-            <EntityTypeMapping TypeName="rezervModel.cabinet">
+            <EntityTypeMapping TypeName="rezervModel1.cabinet">
               <MappingFragment StoreEntitySet="cabinet">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="namecab" ColumnName="namecab" />
@@ -384,39 +384,39 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="korpus">
-            <EntityTypeMapping TypeName="rezervModel.korpus">
+            <EntityTypeMapping TypeName="rezervModel1.korpus">
               <MappingFragment StoreEntitySet="korpus">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="korpusname" ColumnName="korpusname" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="rezervModel.Role">
+            <EntityTypeMapping TypeName="rezervModel1.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="status">
-            <EntityTypeMapping TypeName="rezervModel.status">
+            <EntityTypeMapping TypeName="rezervModel1.status">
               <MappingFragment StoreEntitySet="status">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="status1" ColumnName="status" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="typecabinet">
-            <EntityTypeMapping TypeName="rezervModel.typecabinet">
+            <EntityTypeMapping TypeName="rezervModel1.typecabinet">
               <MappingFragment StoreEntitySet="typecabinet">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="typecab" ColumnName="typecab" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="rezervModel.User">
+            <EntityTypeMapping TypeName="rezervModel1.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -431,7 +431,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserCabinet">
-            <EntityTypeMapping TypeName="rezervModel.UserCabinet">
+            <EntityTypeMapping TypeName="rezervModel1.UserCabinet">
               <MappingFragment StoreEntitySet="UserCabinet">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="cabinetID" ColumnName="cabinetID" />

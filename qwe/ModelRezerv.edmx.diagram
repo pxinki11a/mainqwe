@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c58cb70d97db4287ba8feb2983840584" Name="Diagram1">
+        <EntityTypeShape EntityType="rezervModel1.cabinet" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.korpus" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.Role" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.status" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.typecabinet" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.User" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="rezervModel1.UserCabinet" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="rezervModel1.FK_cabinet_korpus" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel1.FK_cabinet_status" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel1.FK_cabinet_typecabinet" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel1.FK_UserCabinet_cabinet" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel1.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="rezervModel1.FK_UserCabinet_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

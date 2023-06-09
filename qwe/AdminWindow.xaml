@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:qwe"
+        Icon="images\logo.png"
         mc:Ignorable="d"
-        Title="Админ" Height="450" Width="800" Background="#040C0E">
+        Title="Админ панель" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#040C0E" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -13,7 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image x:Name="GoBackImage" Grid.Row="0" Width="83" Height="25" HorizontalAlignment="Left" Margin="40,5,0,5" Source="/Icon.ico" MouseLeftButtonUp="GoBackImage_Click" ></Image>
-        <TextBlock Grid.Row="0" Text="Окно администратора"/>
+        <TextBlock Grid.Row="0" Text="Редактирование"/>
         <ComboBox Name="SelectTable" Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Кабинеты"/>
             <ComboBoxItem Content="Корпуса"/>
@@ -25,5 +26,6 @@
         </ComboBox>
         <Button Grid.Row="1" HorizontalAlignment="Right" Margin=" 0 0 40 0" Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click" />
         <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="MainFrame" Navigated="MainFrame_Navigated"/>
+        <Button Grid.Row="1" HorizontalAlignment="Left" Margin="56,15,0,25" Content="Назад" x:Name="BtnBack" Click="BtnBack_Click" />
     </Grid>
 </Window>
