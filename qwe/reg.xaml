@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Регистрация" Background="#040C0E">
+      Title="Регистрация" Background="#cbff7b">
 
     <Grid>
          <Grid.RowDefinitions>
@@ -104,5 +104,6 @@
             </StackPanel>
         </Grid>
     </StackPanel>
+        <TextBlock Text="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
     </Grid>
 </Page>

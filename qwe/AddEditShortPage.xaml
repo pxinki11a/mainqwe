@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditShortPage" Background="#040C0E">
+      Title="AddEditShortPage" Background="#cbff7b">
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">

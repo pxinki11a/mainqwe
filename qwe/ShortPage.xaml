@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ShortPage" Background="#040C0E">
+      Title="ShortPage" Background="#cbff7b">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LVShort" Background="#040C0E">
+        <ListView Grid.Row="1" Name="LVShort" Background="#cbff7b">
             <!--VerticalAlignment="Center" HorizontalAlignment="Center"-->
             <ListView.ItemTemplate>
                 <DataTemplate>

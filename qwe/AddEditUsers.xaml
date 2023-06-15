@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditUsers" Background="#040C0E">
+      Title="AddEditUsers" Background="#cbff7b">
 
     <Grid>
         <Grid.RowDefinitions>

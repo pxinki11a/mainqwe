@@ -4,14 +4,14 @@
              xmlns:local="clr-namespace:qwe"
              StartupUri="AuthWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="ColorAccent" Color="#040C0E"/>
-        <SolidColorBrush x:Key="ColorPrimary" Color="#132226"/>
+        <SolidColorBrush x:Key="ColorAccent" Color="#cbff7b"/>
+        <SolidColorBrush x:Key="ColorPrimary" Color="#75c200"/>
         <SolidColorBrush x:Key="ColorNotWhite" Color="#fdf5e6"/>
-        <SolidColorBrush x:Key="ColorFont" Color="#505050"/>
-        <SolidColorBrush x:Key="AnotherColor" Color="#132226"/>
+        <SolidColorBrush x:Key="ColorFont" Color="#616161"/>
+        <SolidColorBrush x:Key="AnotherColor" Color="#75c200"/>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
             <Setter Property="Width" Value="165"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="5"/>
@@ -39,7 +39,7 @@
             <!--<Setter Property="Width" Value="200"/>-->
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="{StaticResource ColorFont}"/>
 

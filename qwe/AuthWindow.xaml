@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:qwe"
         Icon="images\logo.png"
         mc:Ignorable="d"
-        Title="Авторизация" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#040C0E">
+        Title="Авторизация" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#cbff7b">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>

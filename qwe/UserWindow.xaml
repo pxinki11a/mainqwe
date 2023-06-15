@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:qwe"
         mc:Ignorable="d"
         Icon="images\logo.png"
-        Title="Окно пользователя" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#040C0E" ResizeMode="NoResize" ShowInTaskbar="False">
+        Title="Окно пользователя" WindowStartupLocation="CenterScreen" Height="900" Width="1800" Background="#cbff7b" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>

@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditCabinetPage" Background="#040C0E">
+      Title="AddEditCabinetPage" Background="#cbff7b">
 
     <Grid>
 

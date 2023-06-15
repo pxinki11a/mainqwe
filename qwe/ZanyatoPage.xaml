@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:qwe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ZanyatoPage" Background="#040C0E">
+      Title="ZanyatoPage" Background="#cbff7b">
 
     <Grid >
-        <ListView Name="LWHistory" Margin="5,0,-5,5" Width="800" Background="#040C0E" SelectionChanged="LWHistory_SelectionChanged">
+        <ListView Name="LWHistory" Margin="5,0,-5,5" Width="800" Background="#cbff7b" SelectionChanged="LWHistory_SelectionChanged">
             <ListView.View>
 
                 <GridView >

@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LVMain" Background="#040C0E">
+        <ListView Grid.Row="1" Name="LVMain" Background="#cbff7b">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="{StaticResource ColorAccent}">
